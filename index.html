@@ -12,13 +12,23 @@
 
 <style>
 
-/* ✅ Jameel Noori Font */
+/* ===================== */
+/* ✅ JAMEEL NOORI FONT */
+/* ===================== */
+
+/* 🔥 BEST (LOCAL FONT - RECOMMENDED) */
 @font-face {
   font-family: 'Jameel Noori';
+  src: url('file:///android_asset/fonts/JameelNoori.ttf') format('truetype');
+
+  /* fallback (agar local file na mile) */
   src: url('https://raw.githubusercontent.com/gullnoor596-svg/Help-us/main/Jameel%20Noori%20Nastaleeq.ttf') format('truetype');
-  font-display: swap;   /* 🔥 IMPORTANT FIX */
+
+  font-display: swap;
 }
 
+/* ===================== */
+/* 🎨 COLORS */
 :root{
   --bg:#0f172a;
   --card:rgba(255,255,255,0.06);
@@ -33,13 +43,16 @@ body.light{
   --border:#22c55e;
 }
 
+/* ===================== */
+/* 🧠 BODY FIX (FAST RENDER) */
 body{
   margin:0;
   font-family:'Jameel Noori','Noto Nastaliq Urdu', serif;
+
   background:var(--bg);
   color:var(--text);
 
-  /* 🔥 SMOOTH TEXT FIX */
+  /* 🔥 smooth Urdu rendering */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
