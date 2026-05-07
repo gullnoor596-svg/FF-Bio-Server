@@ -16,6 +16,7 @@
 @font-face {
   font-family: 'Jameel Noori';
   src: url('https://raw.githubusercontent.com/gullnoor596-svg/Help-us/main/Jameel%20Noori%20Nastaleeq.ttf') format('truetype');
+  font-display: swap;   /* 🔥 IMPORTANT FIX */
 }
 
 :root{
@@ -37,6 +38,11 @@ body{
   font-family:'Jameel Noori','Noto Nastaliq Urdu', serif;
   background:var(--bg);
   color:var(--text);
+
+  /* 🔥 SMOOTH TEXT FIX */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
 }
 
 .main{padding:15px;}
