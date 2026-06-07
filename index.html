@@ -33,33 +33,33 @@ body{
   color:var(--text);
 }
 
-/* 🔤 TITLE FONT (ENGLISH) */
+/* TITLE */
 .title{
   font-family: 'Poppins', sans-serif;
-  position:absolute;
-  left:50%;
-  top:10%;
-  transform:translate(-50%,-50%);
-  font-size:30px;
+  font-size:25px;
   font-weight:900;
-
-  background:linear-gradient(270deg,#ff0000,#ff6600,#ffff00,#00ff00,#00ffff,#0066ff,#9900ff,#ff00ff);
-  background-size:600% 100%;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  animation:rightload 3s linear infinite;
+  text-align:center;
+  position:relative;
+  width:100%;
 }
 
-/* 📝 URDU FONT */
-body, .text, #search, .menuItem, .categoryItem{
-  font-family:'Noto Nastaliq Urdu', serif;
+/* 💧 TEAR EFFECT */
+.title::after{
+  content:"💧💧";
+  position:absolute;
+  left:70%;
+  top:0;
+  font-size:9px;
+  opacity:0;
+  animation:tearDrop 1.2s infinite ease-in-out;
 }
 
-@keyframes rightload{
-  0%{background-position:100% 0;}
-  100%{background-position:0 0;}
+@keyframes tearDrop{
+  0%{opacity:0; transform:translateY(0);}
+  20%{opacity:1;}
+  100%{opacity:0; transform:translateY(60px);}
 }
+
 
 /* HEADER */
 .header{
@@ -242,7 +242,7 @@ body, .text, #search, .menuItem, .categoryItem{
 
 <div class="header">
   <button id="menuBtn" onclick="openDrawer()">☰</button>
-  <div class="title">GULL KHAN</div>
+  <div class="title">😭GULL KHAN</div>
 </div>
 
 <input id="search" placeholder="اقوال تلاش کریں..." oninput="searchQuotes()">
