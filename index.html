@@ -32,26 +32,32 @@ body{
   color:var(--text);
 }
 
-/* TITLE */
+/* 🔤 TITLE FONT (ENGLISH) */
 .title{
+  font-family: 'Poppins', sans-serif;
   position:absolute;
   left:50%;
-  top:10px;
-  transform:translateX(-50%);
-  font-size:32px;
+  top:10%;
+  transform:translate(-50%,-50%);
+  font-size:30px;
   font-weight:900;
 
-  background:linear-gradient(90deg,red,orange,yellow,green,cyan,blue,violet,red);
-  background-size:300%;
+  background:linear-gradient(270deg,#ff0000,#ff6600,#ffff00,#00ff00,#00ffff,#0066ff,#9900ff,#ff00ff);
+  background-size:600% 100%;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 
-  animation:move 4s linear infinite;
+  animation:rightload 3s linear infinite;
 }
 
-@keyframes move{
-  0%{background-position:0%;}
-  100%{background-position:300%;}
+/* 📝 URDU FONT */
+body, .text, #search, .menuItem, .categoryItem{
+  font-family:'Noto Nastaliq Urdu', serif;
+}
+
+@keyframes rightload{
+  0%{background-position:100% 0;}
+  100%{background-position:0 0;}
 }
 
 /* HEADER */
@@ -235,7 +241,7 @@ body{
 
 <div class="header">
   <button id="menuBtn" onclick="openDrawer()">☰</button>
-  <div class="title">🥀گل خان</div>
+  <div class="title">GULL KHAN</div>
 </div>
 
 <input id="search" placeholder="اقوال تلاش کریں..." oninput="searchQuotes()">
