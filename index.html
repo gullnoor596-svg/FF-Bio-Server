@@ -39,29 +39,51 @@ body{
   left:50%;
   top:5%;
   transform:translate(-50%,-50%);
-
-  font-size:30px;
+  
+  font-size:28px;
   font-weight:900;
-  font-family: 'Poppins', sans-serif;
+  font-family:'Poppins',sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
 
-  /* STATIC RAINBOW COLORS */
-  background:linear-gradient(
-    90deg,
-    #ff0000,
-    #ff7a00,
-    #ffee00,
-    #00ff4c,
-    #00e5ff,
-    #0044ff,
-    #7a00ff,
-    #ff00c8
-  );
+  color:#ff0000;
 
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  animation: horrorFlicker 0.2s infinite,
+             horrorShake 1.5s infinite,
+             floatText 3s ease-in-out infinite;
 
-  /* optional glow */
-  text-shadow:0 0 6px rgba(0,255,255,0.25);
+  text-shadow:
+    2px 0 #ff0000,
+    -2px 0 #000,
+    0 0 10px #ff0000,
+    0 0 25px rgba(255,0,0,0.6);
+}
+
+/* 💀 Flicker (broken signal feel) */
+@keyframes horrorFlicker{
+  0%{ opacity:1; }
+  10%{ opacity:0.7; }
+  20%{ opacity:1; }
+  30%{ opacity:0.4; }
+  40%{ opacity:1; }
+  60%{ opacity:0.6; }
+  80%{ opacity:1; }
+  100%{ opacity:0.8; }
+}
+
+/* 💀 Shake (fear effect) */
+@keyframes horrorShake{
+  0%,100%{ transform:translate(-50%,-50%) translate(0,0); }
+  20%{ transform:translate(-50%,-50%) translate(-3px,2px); }
+  40%{ transform:translate(-50%,-50%) translate(3px,-2px); }
+  60%{ transform:translate(-50%,-50%) translate(-2px,-3px); }
+  80%{ transform:translate(-50%,-50%) translate(2px,3px); }
+}
+
+/* Floating */
+@keyframes floatText{
+  0%,100%{ transform:translate(-50%,-50%) translateY(0); }
+  50%{ transform:translate(-50%,-50%) translateY(-4px); }
 }
 
 /* HEADER */
@@ -245,7 +267,7 @@ body{
 
 <div class="header">
   <button id="menuBtn" onclick="openDrawer()">☰</button>
-  <div class="title">GULL KHAN</div>
+  <div class="title">FREE FIRE</div>
 </div>
 
 <input id="search" placeholder="اقوال تلاش کریں..." oninput="searchQuotes()">
@@ -990,6 +1012,18 @@ c.innerHTML+=`
 
 render();
 
+/* 🔥 TITLE AUTO CHANGE */
+const titleNames = [
+  "GULL KHAN",
+    "FREE FIRE",
+];
+
+let i = 0;
+
+setInterval(() => {
+  i = (i + 1) % titleNames.length;  // 🔁 repeat loop
+  document.getElementById("title").innerHTML = titleNames[i];
+}, 3000);
 </script>
 
 </body>
