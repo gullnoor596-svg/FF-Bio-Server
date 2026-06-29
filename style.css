@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Jameel Urdu';
+    src: url('./fonts/JameelNoori.ttf') format('truetype');
+}
+
+body{
+    margin:0;
+    font-family: 'Jameel Urdu', serif;
+    background:#0f172a;
+    color:#fff;
+}
