@@ -11,13 +11,12 @@
   
 <style>
 
-/* ===== FONT IMPORT (FAST LOCAL) ===== */
+/* ===== FONT IMPORT ===== */
 @font-face {
-  font-family: 'Noto Nastaliq Urdu';
-  src: url('file:///android_asset/fonts/NotoNastaliqUrdu.ttf');
+  font-family: 'Jameel Noori Nastaleeq';
+  src: url('https://raw.githubusercontent.com/gullnoor596-svg/FF-Bio-Server/main/JameelNoori.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
 /* ===== THEME ===== */
@@ -35,16 +34,13 @@ body.light{
   --green:#16a34a;
 }
 
-/* ===== BODY STYLE ===== */
 body{
   margin:0;
-  font-family:'Noto Nastaliq Urdu','Jameel Noori Nastaleeq',serif;
+  font-family:'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
   background:var(--bg);
   color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
 }
-
+  
 /* ===== OPTIONAL CARD STYLE ===== */
 .card{
   background:var(--card);
